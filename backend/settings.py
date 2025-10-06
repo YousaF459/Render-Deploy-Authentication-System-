@@ -228,10 +228,10 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'user': '100/day',            # general default
         'anon': '100/day',
-        'otp_resend': '10/hour',
-        'login_attempt': '20/hour',
-        'password_reset': '3/hour',
-        'registration': '5/hour',
+        'otp_resend': '3/hour',
+        'login_attempt': '4/hour',
+        'password_reset': '3/day',
+        'registration': '3/hour',
     }
     
     
