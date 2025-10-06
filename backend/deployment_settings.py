@@ -51,10 +51,10 @@ DATABASES={
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))  # default to 587 if not set
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'  # convert string to bool
-EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', 'False') == 'True'  # convert string to bool
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
