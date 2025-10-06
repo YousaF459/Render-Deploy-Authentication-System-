@@ -23,6 +23,7 @@ from userauths.throttlerates import OTPResendThrottle,LoginAttemptThrottle,Passw
 from rest_framework_simplejwt.views import TokenRefreshView
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.serializers import TokenRefreshSerializer
+from ..backend.deployment_settings import DEFAULT_FROM_EMAIL
 # Create your views here.
 
 
@@ -85,7 +86,7 @@ class RegisterView(generics.CreateAPIView):
         send_mail(
             subject="Verify your email",
             message=f"Your OTP is {verification.otp}. It will expire in 5 minutes.",
-            from_email=settings.DEFAULT_FROM_EMAIL,
+            from_email=DEFAULT_FROM_EMAIL,
             recipient_list=[user.email],
             fail_silently=False,
         )
@@ -167,7 +168,7 @@ class PasswordResetEmail(APIView):
         send_mail(
         subject,
         message,
-        EMAIL_HOST_USER,           # sender
+        DEFAULT_FROM_EMAIL,           # sender
         recipient_list,         # replace with your email
         fail_silently=False,
         )
