@@ -8,5 +8,5 @@ python manage.py migrate
 
 if [ "$CREATE_SUPERUSER" = "true" ]; then
     echo "Creating Django superuser..."
-    python manage.py create_superuser
+    python backend/manage.py createsuperuser
 fi
