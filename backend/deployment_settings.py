@@ -5,7 +5,7 @@ from .settings import BASE_DIR
 
 
 ALLOWED_HOSTS=[os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
-CSRF_TRUSTED_ORIGINS=['https://'+os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+CSRF_TRUSTED_ORIGINS=['https://'+ os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 
 
 
@@ -75,4 +75,4 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'api'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
-DEFAULT_FROM_EMAIL = 'noreply@authentication.com'
+DEFAULT_FROM_EMAIL = 'hello@demomailtrap.co'
