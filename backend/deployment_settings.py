@@ -4,9 +4,17 @@ from .settings import *
 from .settings import BASE_DIR
 
 
-ALLOWED_HOSTS=[os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
-CSRF_TRUSTED_ORIGINS=['https://'+ os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+#ALLOWED_HOSTS=[os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+ALLOWED_HOSTS = [
+    os.environ.get('RENDER_EXTERNAL_HOSTNAME', 'render-deploy-authentication-system.onrender.com'),
+    'localhost', '127.0.0.1'
+]
+#CSRF_TRUSTED_ORIGINS=['https://'+ os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://render-deploy-authentication-system.onrender.com',
+    'https://render-deploy-authentication-system-react.onrender.com'
+]
 
 
 DEBUG=True
