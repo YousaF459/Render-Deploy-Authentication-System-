@@ -10,3 +10,4 @@ if [ "$CREATE_SUPERUSER" = "true" ]; then
     echo "Creating Django superuser..."
     python backend/manage.py createsuperuser
 fi
+
