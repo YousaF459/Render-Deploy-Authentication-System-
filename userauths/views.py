@@ -86,7 +86,7 @@ class RegisterView(generics.CreateAPIView):
         send_mail(
             subject="Verify your email",
             message=f"Your OTP is {verification.otp}. It will expire in 5 minutes.",
-            from_email='hello@demomailtrap.co',
+            from_email=DEFAULT_FROM_EMAIL,
             recipient_list=[user.email],
             fail_silently=False,
         )
@@ -168,7 +168,7 @@ class PasswordResetEmail(APIView):
         send_mail(
         subject,
         message,
-        'hello@demomailtrap.co',           # sender
+        DEFAULT_FROM_EMAIL,           # sender
         recipient_list,         # replace with your email
         fail_silently=False,
         )
